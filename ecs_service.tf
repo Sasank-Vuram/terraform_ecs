@@ -1,5 +1,5 @@
-resource "aws_ecs_service" "tfer--pog_connector_middleware_pog_connector_middleware-002D-service" {
-  cluster = "pog_connector_middleware"
+resource "aws_ecs_service" "tfer--terraform_ecs_terraform_ecs-002D-service" {
+  cluster = "default"
 
   deployment_circuit_breaker {
     enable   = "false"
@@ -17,12 +17,12 @@ resource "aws_ecs_service" "tfer--pog_connector_middleware_pog_connector_middlew
   enable_execute_command             = "false"
   health_check_grace_period_seconds  = "0"
   launch_type                        = "FARGATE"
-  name                               = "pog_connector_middleware-service"
+  name                               = "terraform_ecs-service"
 
   network_configuration {
     assign_public_ip = "true"
-    security_groups  = ["sg-48b6a92d"]
-    subnets          = ["subnet-cd6e9194", "subnet-35ad7142"]
+    security_groups  = ["sg-113ea674"]
+    subnets          = ["subnet-2fd9ae63", "subnet-39080951"]
   }
 
   platform_version    = "LATEST"
@@ -32,5 +32,5 @@ resource "aws_ecs_service" "tfer--pog_connector_middleware_pog_connector_middlew
     project = "newecs"
   }
 
-  task_definition = "arn:aws:ecs:us-east-1:167934968472:task-definition/pog_connector_middleware-task:162"
+  task_definition = "arn:aws:ecs:ap-south-1:077286633283:task-definition/terraform_ecs-task:162"
 }
